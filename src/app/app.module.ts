@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { APP_ROUTING } from './app.routes';
 
+//servicios
+import { AuthService } from './services/auth.service';
+
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -23,7 +27,9 @@ import { ProtegidaComponent } from './components/protegida/protegida.component';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

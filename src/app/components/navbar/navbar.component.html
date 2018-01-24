@@ -18,7 +18,17 @@
     </ul>
 
     <span class="navbar-text">
-      Botones de login/logout
+      <button 
+      *ngIf="!auth.isAuthenticated()"
+      (click)="login()"
+      class="btn btn-primary">Ingresar</button>
+
+      <button 
+      *ngIf="auth.isAuthenticated()"
+      (click)="salir()"
+      class="btn btn-primary">Salir</button>
+
+
     </span>
 
   </div>
