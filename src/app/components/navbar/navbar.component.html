@@ -6,13 +6,13 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['home']">Home</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['precios']">Precios</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item"  routerLinkActive="active" *ngIf="auth.isAuthenticated()">
         <a class="nav-link" [routerLink]="['protegida']">Protegida</a>
       </li>
     </ul>
@@ -21,12 +21,12 @@
       <button 
       *ngIf="!auth.isAuthenticated()"
       (click)="login()"
-      class="btn btn-primary">Ingresar</button>
+      class="btn btn-primary btn-sm">Ingresar</button>
 
       <button 
       *ngIf="auth.isAuthenticated()"
       (click)="salir()"
-      class="btn btn-primary">Salir</button>
+      class="btn btn-primary btn-sm">Salir</button>
 
 
     </span>
